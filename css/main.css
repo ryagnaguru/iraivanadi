@@ -447,9 +447,11 @@ li.comment > article .avatar {
 
 .support-widget {
   border: 1px solid #e9e6c4;
-  padding: 10px 100px 10px 20px;
-  background: #fefbdc url("../images/support.png") no-repeat 95% 20px;
+  background: #353b65 url("../images/main-bg.jpg") center top no-repeat;
+  padding: 10px 10px 10px 10px;
   margin-bottom: 20px;
+  font-size: 14px;
+  color: #ffff;
 }
 .support-widget h3 {
   margin: 0;
@@ -1346,9 +1348,9 @@ a#scroll-top:hover {
   /* Search Area */
   .search-area-wrapper {
     background-size: auto;
-    min-height: 240px;
+    min-height: 180px;
     height: auto !important;
-    height: 240px;
+    height: 180px;
   }
   .search-area-wrapper .search-area {
     padding: 20px 0;
