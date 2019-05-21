@@ -1,24 +1,47 @@
+tags=[
+    {
+        "id":1,
+        "name":"ThirukadaiKaapu",
+        "author": "Thirgnana Sambandhar"
+    },
+    {
+        "id":2,
+        "name":"Abirami Andhathi",
+        "author":"Abirami Pattar"
+    }
+];
+
 categories=[
     {
         "id":1,
-        "name":"ThirukadaiKaapu"
+        "name":"Recitings"
     }
 ];
 
 articles=[
     {
+        "id":2,
+        "tag":2,
+        "category":1,
+        "page":"nandre.html",
+        "topic":"நன்றே வருகினும், தீதே விளைகினும், நான் அறிவது..",
+        "date":"21 May, 2019",
+        "description":"Abirami pattar has given a poem seeking for yet another needed blessings one should earn.",
+    },
+    {
         "id":1,
+        "tag":1,
         "category":1,
         "page":"pidiadhan.html",
         "topic":"பிடியதன் உருவுமை கொளமிகு கரியது..",
         "date":"19 May, 2019",
         "description":"Gajamugasuram was a great Shiva bhakt, he did deep penance and received boons from the Lord. After receiving the boons the evil mind started displaying and he became nuisance to all...",
-    }
+    },
 ];
 
 whoami = "<p>"+
-"I am a software developer professionaly, From all my supposedly to be a irrevocable damage I made "+
+"I am a software developer professionaly, From all my supposedly to be a irreversible damage I made "+
 "it was God who showed mercy and gave me a second chance of life. When I started praying by reciting "+
 "various tamil poems about God, there were two things that induced tears of joy in me, <br>1. Tamil language "+
-"and 2. Poets deference and being obsequious towards the almighty.<br><br> I am just a Curator here, "+
-"I wanted to share the poems which would cringe us before the greatness of the Divinity.</p>"
+"and 2. Poets deference and obsequious nature towards the almighty.<br><br> I am just a Curator here, "+
+"I wanted to share the poems which would make us cringe before the greatness of the Divinity.</p>"

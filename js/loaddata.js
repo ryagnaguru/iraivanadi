@@ -1,34 +1,78 @@
 
 $(function () {
-    for (const { id, category, page, topic, date, description } of articles) {
-        let cat = categories.find(x => x.id === category).name;
+    const urlParams = new URLSearchParams(window.location.search);
+    const tag = urlParams.get('tag');
+    const cat = urlParams.get('cat');
+    loadArticles(tag, cat);
+    loadCategories();
+    loadTags();
+    $("#whoami").append(whoami);
+
+   
+});
+
+function loadArticles(tag, cat){
+
+    var filteredArticles = [];
+    if( tag ){
+        $.each(articles, function (idx, obj) {
+            if (obj.tag == parseInt(tag)) {
+                filteredArticles.push(obj);
+            }
+        });
+    } else if( cat ){
+        $.each(articles, function (idx, obj) {
+            if (obj.category == parseInt(cat)) {
+                filteredArticles.push(obj);
+            }
+        });
+    }else{
+        filteredArticles = articles;
+    }
+
+    for (const { id, tag, page, topic, date, description, category } of filteredArticles) {
+        
+        let tg = tags.find(x => x.id === tag).name;
+        let ct = categories.find(x => x.id === category).name;
         $("#article-section").append("<article class='format-standard type-post hentry clearfix'>"+
-                            "<header class='clearfix'><h3 class='post-title'><a href='"+page+"'>"+
-                            topic+"</a></h3>"+
-                            "<div class='post-meta clearfix'><span class='date'>"+date+"</span>"+
-                            "<span class='category'><a href='#' title='View all posts in "+cat+"'>"+
-                            cat+"</a></span></header>"+
-                            "<p>"+description+"<a class='readmore-link' href='pidiadhan.html'>Read more</a></p>"+
-                            "</article>");
+            "<header class='clearfix'><h3 class='post-title'><a href='"+page+"'>"+
+            topic+"</a></h3>"+
+            "<div class='post-meta clearfix'><span class='date'>"+date+"</span>"+
+            "<span class='category'><a href='index.html?tag="+tag+"' title='View all posts in "+tg+"'>"+
+            tg+"</a></span></header>"+
+            "<p>"+description+"<a class='readmore-link' href='pidiadhan.html'>Read more</a></p>"+
+            "</article>");
 
         $("#article-side-list").append("<li class='article-entry standard'>"+
-                            "<h4><a href='"+page+"'>"+topic+"</a></h4>"+
-                            "<span class='article-meta'>"+date+" in <a href='#'"+ 
-                            "title='View all posts in "+cat+"'>"+cat+"</a></span>"+
-                            "</li>");
+            "<h4><a href='"+page+"'>"+topic+"</a></h4>"+
+            "<span class='article-meta'>"+date+" in <a href='#'"+ 
+            "title='View all posts in "+tg+"'>"+tg+"</a></span>"+
+            "</li>");
 
-        $("#top-breadcrumb").append("<li><a href='index.html'>Iraivanadi</a><span class='divider'>/</span></li>"+
-                                    "<li><a href='#' title='View all posts in "+cat+"'>"+
-                                    cat+"</a> <span class='divider'>/</span></li>"+
-                                    "<li class='active'>"+topic+"</li>");
+        if( $("#page-id") && tag == parseInt($("#page-id").val())){                    
+            $("#top-breadcrumb").append("<li><a href='index.html'>Iraivanadi</a><span class='divider'>/</span></li>"+
+                "<li><a href='index.html?tag="+tag+"' title='View all posts in "+tg+"'>"+
+                tg+"</a> <span class='divider'>/</span></li>"+
+                "<li class='active'>"+topic+"</li>");
 
-        $("#category-side-list").append("<li><a href='#' title="+cat+">"+cat+"</a> </li>");
-        $("#category-bottom-list").append("<li><a href='#' title="+cat+">"+cat+"</a> </li>");
-        $("#tag-list").append("<a href='#' rel='tag'>"+cat+"</a>");
-        $("#whoami").append(whoami);
-                            
+            $("#tag-list").append("<a href='index.html?tag="+tag+"' rel='tag'>"+tg+"</a>");
+        }
     }
-});
+}
+
+function loadCategories(){
+    for(const {id, name} of categories){
+        $("#category-side-list").append("<li><a href='index.html?cat="+id+"' title="+name+">"+name+"</a> </li>");
+        $("#category-bottom-list").append("<li><a href='index.html?cat="+id+"' title="+name+">"+name+"</a> </li>");
+    }
+}
+
+function loadTags(){
+    for(const {id, name} of tags){
+        $("#tag-side-list").append("<a href='index.html?tag="+id+"' class='btn btn-mini'>"+name+"</a>");
+        
+    }
+}
 
 
                                                        
