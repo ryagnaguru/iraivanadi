@@ -7,16 +7,14 @@ $(function () {
     loadCategories();
     loadTags();
     $("#whoami").append(whoami);
-
-   
 });
 
-function loadArticles(tag, cat){
+function loadArticles(tgs, cat){
 
     var filteredArticles = [];
-    if( tag ){
+    if( tgs ){
         $.each(articles, function (idx, obj) {
-            if (obj.tag == parseInt(tag)) {
+            if (obj.tag == parseInt(tgs)) {
                 filteredArticles.push(obj);
             }
         });
@@ -28,6 +26,16 @@ function loadArticles(tag, cat){
         });
     }else{
         filteredArticles = articles;
+    }
+
+    for (const {tag, page, topic, date} of articles) {
+        let tg = tags.find(x => x.id === tag).name;
+        $("#article-side-list").append("<li class='article-entry standard'>"+
+            "<h4><a href='"+page+"'>"+topic+"</a></h4>"+
+            "<span class='article-meta'>"+date+" in <a href='index.html?tag="+tag+"'"+ 
+            "title='View all posts in "+tg+"'>"+tg+"</a></span>"+
+            "</li>");
+    
     }
 
     for (const { id, tag, page, topic, date, description, category } of filteredArticles) {
@@ -42,12 +50,6 @@ function loadArticles(tag, cat){
             tg+"</a></span></header>"+
             "<p>"+description+"<a class='readmore-link' href='pidiadhan.html'>Read more</a></p>"+
             "</article>");
-
-        $("#article-side-list").append("<li class='article-entry standard'>"+
-            "<h4><a href='"+page+"'>"+topic+"</a></h4>"+
-            "<span class='article-meta'>"+date+" in <a href='#'"+ 
-            "title='View all posts in "+tg+"'>"+tg+"</a></span>"+
-            "</li>");
 
         if( $("#page-id") && tag == parseInt($("#page-id").val())){                    
             $("#top-breadcrumb").append("<li><a href='index.html'>Iraivanadi</a><span class='divider'>/</span></li>"+
