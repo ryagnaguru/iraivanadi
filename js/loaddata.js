@@ -48,7 +48,7 @@ function loadArticles(tgs, cat){
             "<div class='post-meta clearfix'><span class='date'>"+date+"</span>"+
             "<span class='category'><a href='index.html?tag="+tag+"' title='View all posts in "+tg+"'>"+
             tg+"</a></span></header>"+
-            "<p>"+description+"<a class='readmore-link' href='pidiadhan.html'>Read more</a></p>"+
+            "<p>"+description+"..<a class='readmore-link' href='"+page+"'>Read more</a></p>"+
             "</article>");
 
         if( $("#page-id") && tag == parseInt($("#page-id").val())){                    

@@ -8,6 +8,11 @@ tags=[
         "id":2,
         "name":"Abirami Andhathi",
         "author":"Abirami Pattar"
+    },
+    {
+        "id":3,
+        "name":"Kandhar Alangaram",
+        "author":"Arunagirinadhar"
     }
 ];
 
@@ -19,6 +24,15 @@ categories=[
 ];
 
 articles=[
+    {
+        "id":3,
+        "tag":3,
+        "category":1,
+        "page":"vizhikkuthunai.html",
+        "topic":"விழிக்குத் துணைதிரு மென்மலர்ப் பாதங்கள் மெய்ம்மைகுன்றா..",
+        "date":"23 May, 2019",
+        "description":"Arunagirinathar decorated the Tamil God Murugan the embodiment of love and beauty with meticulately weaved piece of poems.",
+    },
     {
         "id":2,
         "tag":2,
