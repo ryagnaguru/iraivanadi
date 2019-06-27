@@ -1,3 +1,4 @@
+
 tags=[
     {
         "id":1,
@@ -13,6 +14,11 @@ tags=[
         "id":3,
         "name":"Kandhar Alangaram",
         "author":"Arunagirinadhar"
+    },
+    {
+        "id":4,
+        "name":"Thirumurai",
+        "author":"Pattinathar"
     }
 ];
 
@@ -24,6 +30,15 @@ categories=[
 ];
 
 articles=[
+    {
+        "id":4,
+        "tag":4,
+        "category":1,
+        "page":"kalla_pilayum.html",
+        "topic":"கல்லாப் பிழையும் கருதாப் பிழையும் கசிந்துருகி..",
+        "date":"27 June, 2019",
+        "description":"Pattinathar tells what could be the biggest mistakes he could commit; The mistake of not learning you that helps for salvation.",
+    },
     {
         "id":3,
         "tag":3,
@@ -54,8 +69,7 @@ articles=[
 ];
 
 whoami = "<p>"+
-"I am a software developer professionaly, From all my supposedly to be a irreversible damage I made, "+
-"it was God who showed mercy and gave me a second chance of life. When I started praying by reciting "+
+"I am a software developer professionaly, When I started praying by reciting "+
 "various tamil poems about God, there were two things that induced tears of joy in me, <br>1. Tamil language "+
 "and 2. Poets deference and obsequious nature towards the almighty.<br><br> I am just a Curator here, "+
 "I wanted to share the poems which would make us cringe before the greatness of the Divinity.</p>"
